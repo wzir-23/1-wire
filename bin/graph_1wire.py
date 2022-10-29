@@ -12,7 +12,7 @@ import sqlite3
 import time
 from matplotlib import pyplot as plt, dates
 
-sensor_path = '/mnt/1wire/'
+
 base_dir = os.path.expanduser('~/repos/git/1-wire/')
 dbfile = base_dir + 'log/temperature.db'
 
@@ -93,8 +93,8 @@ def plot_temperature(sensor_name, c, days):
 
 
 def main():
+    """ Connect to sqlite3 database and plot (currently hardcoded) graph """
     db, c = connect_to_database(dbfile)
-    # sensor_list = db_list_sensors(c)
     plot_temperature("carport", c, 1)
     db.close()
 
